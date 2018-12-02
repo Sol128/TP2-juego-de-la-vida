@@ -3,6 +3,7 @@
 #define INTERFAZ_H_
 
 #include "Informe.h"
+#include "Pila.h"
 
 /*
  * La 'Interfaz' se encarga de mostrar mensajes determinados por consola.
@@ -67,6 +68,16 @@ class Interfaz {
 		 * POST: Muestra por pantalla un mensaje que indica la terminacion del juego.
 		 */
 		void mostrarFinalizacionDelJuego();
+	
+			/* PRE: -.
+		 * POST: Pide los tableros para realizar el camino minimo de origen a destino.
+		*/
+		void pedirTablerosParaCaminoMinimo();
+
+		/* PRE: -.
+		 * POST: muestra el camino minimo entre origen y destino.
+		*/
+		void mostrarCaminoMinimo(Pila<std::string>* camino, unsigned int transferencias);
 
 };
 
