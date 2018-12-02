@@ -79,3 +79,34 @@ void Interfaz::mostrarFinalizacionDelJuego(){
 	cout << "          ";
 	cout << "Programa finalizado. Ciao";
 }
+
+void Interfaz::pedirTablerosParaCaminoMinimo(){
+	cout << endl;
+	cout << "Ingrese el tablero de origen y el tablero destino" << endl;
+	cout << endl;
+}
+
+void Interfaz::mostrarCaminoMinimo(Pila<string>* camino, unsigned int transferencias){
+
+
+	if(camino->estaVacia()){
+		cout << endl;
+		cout << "No existe un camino minimo " << endl;
+	} else {
+		cout << endl;
+		cout << "El camino minimo entre el tablero de origen y el tablero destino es: " << endl;
+
+		while (!camino->estaVacia()) {
+			string tablero;
+			tablero = camino->desapilar();
+			cout << tablero;
+			if (!camino->estaVacia()) {
+				cout << " -> ";
+			}
+		}
+		cout << endl;
+		cout << "La cantidad de transferencias es: " << transferencias << endl;
+	}
+
+
+}
